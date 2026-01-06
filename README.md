@@ -6,7 +6,7 @@ A beginner-friendly workshop for going from messy idea to working app using Clau
 
 **Audience:** Anyone! Works for complete beginners, designers, PMs, musicians, artists - not just engineers. If you've used ChatGPT before, you can do this.
 
-**For technical folks:** == This guide includes explanations for beginners. Don't write it off - the workflow and agent patterns are useful regardless of your experience level. Skip the basics you already know. == 
+**For technical folks:** <mark> This guide includes explanations for beginners. Don't write it off - the workflow and agent patterns are useful regardless of your experience level. Skip the basics you already know. </mark> 
 
 ---
 
