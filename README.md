@@ -175,7 +175,7 @@ Anthropic uses "Constitutional AI" - the model is given a set of principles (a "
 - [Constitutional AI Research Paper](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 
 **4. Security deep-dive: What are the real risks?**
-Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. See above note on "unintentionally breaking" thihngs. Good topic if you have security-minded folks in the room.
+Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. See above note on "unintentionally breaking" things. Good topic if you have security-minded folks in the room.
 - [Anthropic's AI Safety Research](https://www.anthropic.com/research)
 - [Core Views on AI Safety - Anthropic](https://www.anthropic.com/news/core-views-on-ai-safety)
 
