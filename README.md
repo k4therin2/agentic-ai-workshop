@@ -169,7 +169,7 @@ So it's a back-and-forth: your computer ↔ Anthropic's servers ↔ your compute
 - [Claude Code: Behind the Scenes of the Agentic Loop](https://blog.promptlayer.com/claude-code-behind-the-scenes-of-the-master-agent-loop/) (great technical deep-dive)
 - [Anthropic: Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) (official docs on the "gather context → act → verify → repeat" loop)
 
-**3. How companies try to make models to be helpful and safe(r) with varying success**
+**3. How companies attempt to make models helpful and safe(r) with varying success**
 Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision. This problem has not been solved and there are ways to have this unintentionally broken.
 - [Claude's Constitution - Anthropic](https://www.anthropic.com/news/claudes-constitution)
 - [Constitutional AI Research Paper](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
