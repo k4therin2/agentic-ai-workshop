@@ -156,13 +156,13 @@ LLMs are transformer-based neural networks trained to predict the next word in a
 Your text gets sent to Anthropic's servers, converted to tokens, processed through the model, and a response is generated token by token. The model doesn't remember between sessions unless you're in the same conversation. Context builds up during a conversation but has limits.
 - [McKinsey: What is a Context Window?](https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-a-context-window)
 
-**3. How was Claude trained to be helpful and safe?**
-Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision.
+**3. How companies try to make models to be helpful and safe(r) with varying success**
+Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision. This problem has not been solved and there are ways to have this unintentionally broken.
 - [Claude's Constitution - Anthropic](https://www.anthropic.com/news/claudes-constitution)
 - [Constitutional AI Research Paper](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 
 **4. Security deep-dive: What are the real risks?**
-Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. Good topic if you have security-minded folks in the room.
+Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. See above note on "unintentionally breaking" thihngs. Good topic if you have security-minded folks in the room.
 - [Anthropic's AI Safety Research](https://www.anthropic.com/research)
 - [Core Views on AI Safety - Anthropic](https://www.anthropic.com/news/core-views-on-ai-safety)
 
@@ -172,7 +172,9 @@ Models are trained on human-generated data, which includes human biases. This is
 - [Nature: Ethics and Discrimination in AI Recruitment](https://www.nature.com/articles/s41599-023-02079-x)
 
 **6. The economics and environmental impact**
-Running these models takes significant computing power. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?
+Running these models means running (often GPU-heavy) workloads in data centers, which translates into electricity use, cooling (sometimes water), and real costs/constraints on power + infrastructure. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?  If you want numbers and scenarios without hot takes, these two are solid:
+- [IEA: electricity demand, data center growth, grid constraints, and scenario-based projections](https://www.iea.org/reports/energy-and-ai)
+- [OECD: framework for thinking clearly - direct/indirect paths, measurable vs. uncertain, where data gaps still are](https://www.oecd.org/en/publications/measuring-the-environmental-impacts-of-artificial-intelligence-compute-and-applications_7babf571-en.html)
 
 **7. Where is this all going?**
 Agents, autonomous systems, AGI timelines, job market impacts. People have strong feelings and questions here. You don't need to have answers - facilitating the discussion is valuable.
