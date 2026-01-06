@@ -24,6 +24,8 @@ Before we dive in, here's what some terms mean:
 
 **Comment** - In code examples below, you'll see lines starting with `#`. These are comments - notes for humans that the computer ignores. They explain what the next line does.
 
+**Agent** - A set of instructions that tells Claude how to behave for a specific task. Think of it like giving someone a job description before they start working. "You're a planner, here's what you do..."
+
 ---
 
 ## What to Expect: Claude Will Ask Permission
@@ -166,23 +168,39 @@ You should see Claude Code start up and greet you.
 
 **Check your usage limits:** Open [console.anthropic.com/settings/usage](https://console.anthropic.com/settings/usage) in your browser. This shows how much you've used and what's left. Keep this tab open during the workshop.
 
-### Step 2: Brain Dump Your Idea (5 min)
+### Step 2: Set Up Your Agents (15 min)
 
-Just get your messy idea out. Don't worry about structure or being "correct."
+This is a crucial step! We're going to create **persistent agents** that you can reuse anytime. This is what makes the workflow fast and repeatable.
 
-> **Tip:** Consider using [Wispr](https://wispr.chat/) (free) or [Wispr Flow](https://wispr.chat/flow) (paid) for voice-to-text. Why? Because AI models handle messy human speech surprisingly well, and talking is 3-4x faster than typing. You can literally ramble your idea out loud and paste the transcript. But typing works fine too!
+In Claude Code, type:
+```
+/agents
+```
 
-Example brain dumps:
+This opens the agent setup wizard. You'll create three agents:
 
-> "I want an app where I can dump all my random ideas and it organizes them somehow, like clusters them by theme or something"
+**1. Create the Planner agent:**
+- Name it `planner`
+- When asked for the prompt, copy and paste the entire contents of `prompts/planner.md` (everything inside the ``` code block)
+- This agent turns messy ideas into clear plans
 
-> "A practice log for music - track what I practiced, how long, my mood, and show me streaks"
+**2. Create the Builder agent:**
+- Name it `builder`
+- Paste the contents of `prompts/builder.md`
+- This agent implements your plan as a web app
 
-> "Something to help me plan gifts for people with constraints like budget and what they already have"
+**3. Create the Verifier agent (optional):**
+- Name it `verifier`
+- Paste the contents of `prompts/verifier.md`
+- This agent adds simple tests or verification
 
-### Step 3: Understand the Agents (10 min)
+**Why do this?** Once these agents are set up, you can use them anytime by just saying "use the planner agent to..." You'll see the agent name appear as Claude works, which helps you understand what's happening. Plus, you won't have to dig up and copy-paste prompts every time.
 
-Before using the agents, let's look at what they actually are. Open the `/prompts` folder and skim through each one together:
+> **Note:** If you're in a hurry, you CAN just copy-paste the prompts directly without creating persistent agents. But setting them up properly is a skill worth learning - it's what makes this workflow actually fast in real use.
+
+### Step 3: Understand What the Agents Do (5 min)
+
+Before using them, let's understand what each agent does. Open the `/prompts` folder and skim through each one together:
 
 **Planner Agent** (`prompts/planner.md`)
 - Takes your messy idea and asks clarifying questions
@@ -200,16 +218,28 @@ Before using the agents, let's look at what they actually are. Open the `/prompt
 - Adds simple tests or a manual checklist
 - Keeps it light - just enough confidence that it works
 
-The whole point of looking at these prompts is to demystify what's happening. These aren't magic - they're just detailed instructions that shape how Claude approaches your project.
+The whole point of reading through these is to demystify what's happening. Agents aren't magic - they're just detailed instructions that shape how Claude approaches your project.
 
-### Step 4: Create the Plan (15-20 min)
+### Step 4: Brain Dump Your Idea (5 min)
 
-Copy the Planner prompt from `prompts/planner.md` and paste it into Claude Code, followed by your brain dump:
+Just get your messy idea out. Don't worry about structure or being "correct."
+
+> **Tip:** Consider using [Wispr](https://wispr.chat/) (free) or [Wispr Flow](https://wispr.chat/flow) (paid) for voice-to-text. Why? Because AI models handle messy human speech surprisingly well, and talking is 3-4x faster than typing. You can literally ramble your idea out loud and paste the transcript. But typing works fine too!
+
+Example brain dumps:
+
+> "I want an app where I can dump all my random ideas and it organizes them somehow, like clusters them by theme or something"
+
+> "A practice log for music - track what I practiced, how long, my mood, and show me streaks"
+
+> "Something to help me plan gifts for people with constraints like budget and what they already have"
+
+### Step 5: Create the Plan (15-20 min)
+
+Now use your planner agent:
 
 ```
-[paste the entire planner prompt here]
-
-Now, turn this idea into a plan:
+Use the planner agent to turn this idea into a plan:
 
 [paste your brain dump here]
 ```
@@ -221,14 +251,12 @@ The agent will:
 
 **Review the plan.** Give feedback. Ask it to revise until you're happy. This is a conversation!
 
-### Step 5: Build It (30-45 min)
+### Step 6: Build It (30-45 min)
 
-Copy the Builder prompt from `prompts/builder.md` and paste it:
+Now use your builder agent:
 
 ```
-[paste the entire builder prompt here]
-
-Now implement Phase 1 from plan.md.
+Use the builder agent to implement Phase 1 from plan.md.
 ```
 
 The agent will:
@@ -238,17 +266,15 @@ The agent will:
 
 **When Claude asks permission:** Remember, you can always say "Explain what this command does first." Don't just approve things you don't understand - use it as a learning moment.
 
-### Step 6: Verify It Works (Optional, 10 min)
+### Step 7: Verify It Works (Optional, 10 min)
 
-If you have time, use the Verifier agent for quick sanity checks:
+If you have time, use the verifier agent:
 
 ```
-[paste the verifier prompt]
-
-Add some basic verification that this works.
+Use the verifier agent to check that the main features work.
 ```
 
-### Step 7: Demo Time!
+### Step 8: Demo Time!
 
 Share your screen and show what you built! Even "it loads and shows one thing" is a win. The group energy at this point is usually amazing.
 
@@ -277,17 +303,29 @@ Find all prompts in the `/prompts` folder.
 
 ## Setting Up the Agents
 
-**For this workshop, copy and paste the prompts directly.** Here's why:
+**Use the `/agents` command in Claude Code to create persistent agents.** This is the recommended approach because:
 
-The whole point is learning how agents work. When you paste the prompt yourself, you see exactly what instructions Claude is following. It's not a black box - it's just text that shapes behavior.
+1. You can reuse agents without copy-pasting every time
+2. You'll see the agent name displayed as Claude works (helps you track what's happening)
+3. It's a key skill for building more sophisticated workflows later
+
+**How to do it:**
+1. In Claude Code, type `/agents`
+2. Follow the wizard to create a new agent
+3. Give it a name (like `planner`)
+4. Paste the prompt from the corresponding file in `/prompts`
+5. Save it
+
+**Once set up, using agents is simple:**
+```
+Use the planner agent to turn this idea into a plan: [your idea]
+```
 
 ```
-[paste entire prompt from prompts/planner.md]
-
-Now, turn this idea into a plan: [your idea]
+Use the builder agent to implement Phase 1 from plan.md.
 ```
 
-> **Note:** Claude Code does have an `/agents` command for creating persistent agents. That's useful once you're comfortable, but for learning, pasting the prompts directly is more educational. You'll actually understand what's happening.
+> **Shortcut:** If you're just experimenting or don't want to set up persistent agents, you CAN copy-paste the prompt directly. But you'll miss out on the reusability that makes this workflow powerful in daily use.
 
 ---
 
@@ -321,14 +359,14 @@ This section is important. Read it before you start.
 Claude Code runs commands on YOUR computer. That's powerful, but it means:
 
 - **Back up your laptop** before the workshop if you have important stuff on it
-- **Ideally, use a secondary/old laptop** if you have one lying around
+- **Ideally, use a secondary/old laptop** if you have one lying around - think of it as your "toy box" for experimenting
 - If something goes wrong, it's on your machine
 
 ### Real Example: How I Bricked My Server
 
-True story: I was running agents autonomously on my home server. They kept creating Docker images without cleaning up old ones. Eventually I ran out of disk space and the whole server locked up. I had to physically reset it. It was fine because it was an expiremental server I had create for the express purpose of toying around, and I was doing some pretty complicated stuff compared to what we're doing today, but move forward with caution.
+True story: I was running agents autonomously on my home server. They kept creating Docker images without cleaning up old ones. Eventually I ran out of disk space and the whole server locked up. I had to physically reset it. It was fine because it was an experimental server I had created for the express purpose of toying around, and I was doing some pretty complicated stuff compared to what we're doing today, but move forward with caution.
 
-**Lesson:** Agents are powerful but they don't think about resource limits. Keep an eye on things.
+**Lesson:** Agents are powerful but they don't think about things like "am I filling up the hard drive?" Keep an eye on things.
 
 ### The Permission System is Your Friend
 
@@ -343,37 +381,46 @@ Example interaction:
 Claude: I'd like to run: rm -rf node_modules
 You: What does that command do?
 Claude: This deletes the node_modules folder, which contains
-        installed dependencies. We're doing this to reinstall
-        them fresh and fix the version conflict.
+        downloaded code libraries. We're doing this to reinstall
+        them fresh and fix a version problem.
 You: Ok, approved.
 ```
 
-### Avoid "YOLO Mode"
+### About "YOLO Mode" (--dangerously-skip-permissions)
 
-Claude Code has a flag called `--dangerously-skip-permissions` (sometimes called "yolo mode"). This lets Claude run commands without asking you first.
+Claude Code has a flag called `--dangerously-skip-permissions` that lets Claude run commands without asking you first. People sometimes call this "YOLO mode."
 
-**Don't use this** unless:
-- You really understand what you're doing
-- You're on an isolated machine you don't care about
-- You've set up proper sandboxing
+**The honest truth:** This makes things go WAY faster. Like, 10x faster. Lightning speed. No constant approvals, just Claude doing its thing.
 
-For this workshop, keep permissions ON. The asking is a feature, not a bug.
+**But:** It comes with real risk. Claude might:
+- Install things you didn't want
+- Delete files it shouldn't
+- Make changes you can't easily undo
+- Fill up your disk space without you noticing
 
-### What COULD Go Wrong (Honest List)
+**My recommendation:** Get yourself a "toy laptop" - an old computer or a cheap refurbished one - specifically for experimenting with autonomous agents. Run YOLO mode there, not on your main machine with all your important stuff. That way you get the speed benefits without the stress.
 
-- Claude installs packages that conflict with stuff you already have
-- Claude creates lots of files and clutters your project
-- Claude runs a server that uses a port something else needs
-- Claude doesn't clean up after itself (temp files, Docker images, etc.)
-- Claude misunderstands and modifies the wrong file
+**For this workshop:** Keep permissions ON. Learn the workflow first, speed it up later.
 
-None of these are catastrophic if you're paying attention and have backups. But they're real.
+### What COULD Go Wrong (Plain English)
+
+Here's an honest list of things that might happen:
+
+- **Software conflicts** - Claude installs a program that doesn't play nice with something you already have
+- **Messy folders** - Claude creates a bunch of files and your project folder gets cluttered
+- **Port conflicts** - Claude tries to run a server but something else on your computer is already using that spot (you'll see an error like "port already in use")
+- **Disk space** - Claude keeps creating stuff without cleaning up old versions, and eventually your hard drive fills up
+- **Wrong file edited** - Claude misunderstands which file you meant and changes the wrong one
+
+None of these will destroy your computer. But they can be annoying to fix if you're not expecting them. Having backups and paying attention to what Claude is doing prevents most headaches.
 
 ---
 
 ## Token-Saving Tips
 
 Your Claude Pro subscription has limits. Here's how to not burn through them:
+
+> **Important note:** These tips are specifically for this beginner workshop where we want to get to a working demo quickly without running out of tokens. As you get more comfortable with Claude Code, you'll develop your own style and may choose to use tokens differently. Don't take these as hard rules for all situations - they're training wheels for today.
 
 ### Basic Tips
 
@@ -388,13 +435,22 @@ Your Claude Pro subscription has limits. Here's how to not burn through them:
 
 ### What Burns Tokens Fast
 
-Having more specialized agents (like a Business Analyst doing detailed prioritization, or a TDD Developer writing dozens of tests) uses a LOT more tokens. That's great for production work, but for a first workshop, keep it simple. You can add sophistication later.
+Having more specialized agents (like a Business Analyst doing detailed prioritization, or a TDD Developer writing dozens of tests) uses a LOT more tokens. Those agents exist in `/prompts/advanced` because they're valuable for real projects - they help you build better software. But for a first workshop, we skip them to get to the fun part faster.
+
+Once you're comfortable with the basics, definitely explore the advanced agents. They're powerful for projects where quality and thoroughness matter more than speed.
 
 ---
 
 ## What's Next (After the Workshop)
 
 You built something! Here's where to go from here:
+
+### Keep Learning
+
+**[The Multiverse School](https://themultiverse.school/)** - This is personally what helped me learn a lot of this stuff. Highly recommend for:
+- Advanced prompt engineering techniques
+- Building autonomous agentic systems
+- Going deeper on pretty much anything we touched on today
 
 ### Level Up Your Agents
 
@@ -404,7 +460,7 @@ You built something! Here's where to go from here:
 
 ### Explore Advanced Patterns
 
-- **Verification-Driven Development (VDD)** - A pattern where a "builder" AI and an "adversarial reviewer" AI iteratively improve code. [Learn more](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25)
+- **Verification-Driven Development (VDD)** - A pattern where a "builder" AI and an "adversarial reviewer" AI iteratively improve code. The reviewer tries to find flaws, the builder fixes them, repeat until solid. [Learn more](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25)
 - **Agent chains** - String multiple agents together (Requirements → BA → PM → Dev → QA)
 - **Autonomous loops** - Have agents work continuously until done (with appropriate guardrails!)
 
@@ -457,7 +513,7 @@ This isn't just for "SF techies." If you're reading this and you built something
 - [Claude Code Quickstart](https://docs.anthropic.com/en/docs/claude-code/quickstart)
 - [Claude Code Usage Dashboard](https://console.anthropic.com/settings/usage) - Check your limits here
 - [Claude Prompting Best Practices](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
-- [The Multiverse School](https://themultiverse.school/) - Great for learning AI fundamentals
+- [The Multiverse School](https://themultiverse.school/) - Highly recommended for going deeper on everything here
 - [Wispr](https://wispr.chat/) - Voice to text for faster brain dumps
 - [VDD: Verification-Driven Development](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) - Advanced adversarial verification pattern
 
