@@ -366,7 +366,7 @@ Claude Code runs commands on YOUR computer. That's powerful, but it means:
 
 True story: I was running agents autonomously on my home server. They kept creating Docker images without cleaning up old ones. Eventually I ran out of disk space and the whole server locked up. I had to physically reset it. It was fine because it was an experimental server I had created for the express purpose of toying around, and I was doing some pretty complicated stuff compared to what we're doing today, but move forward with caution.
 
-**Lesson:** Agents are powerful but they don't think about things like "am I filling up the hard drive?" Keep an eye on things.
+**Lesson:** Agents are powerful but they don't AUTOMATICALLY think about things like "am I filling up the hard drive?" unless you have the right prompting/guardrails set up (advanced). Keep an eye on things.
 
 ### The Permission System is Your Friend
 
