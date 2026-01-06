@@ -172,7 +172,7 @@ Models are trained on human-generated data, which includes human biases. This is
 - [Nature: Ethics and Discrimination in AI Recruitment](https://www.nature.com/articles/s41599-023-02079-x)
 
 **6. The economics and environmental impact**
-Running these models means running (often GPU-heavy) workloads in data centers, which translates into electricity use, cooling (sometimes water), and real costs/constraints on power + infrastructure. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?  If you want numbers and scenarios without hot takes, these two are solid:
+Running these models means running (often GPU-heavy) workloads in data centers, which translates into electricity use, cooling (sometimes water), and real costs/constraints on power + infrastructure. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?
 - [IEA: electricity demand, data center growth, grid constraints, and scenario-based projections](https://www.iea.org/reports/energy-and-ai)
 - [OECD: framework for thinking clearly - direct/indirect paths, measurable vs. uncertain, where data gaps still are](https://www.oecd.org/en/publications/measuring-the-environmental-impacts-of-artificial-intelligence-compute-and-applications_7babf571-en.html)
 
