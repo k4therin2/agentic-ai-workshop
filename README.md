@@ -143,6 +143,43 @@ Start with yourself and a simple project idea you'll use as the demo example (e.
 - The "it's running!" moment is everything. Optimize for getting there fast.
 - End clearly so people don't feel awkward about leaving
 
+### Bonus Topics for Q&A or Extended Sessions
+
+Think about what YOUR friends might be curious about. Here are some topics that often come up, with starter resources if you want to go deeper:
+
+**1. How do these models actually work?**
+LLMs are transformer-based neural networks trained to predict the next word in a sequence. They don't "think" like humans - they're very sophisticated pattern matchers. Understanding this helps set realistic expectations.
+- [Large Language Models - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model) (good technical overview)
+- [What is a Context Window? - IBM](https://www.ibm.com/think/topics/context-window) (explains the "memory" limitation)
+
+**2. What's actually happening when I talk to Claude?**
+Your text gets sent to Anthropic's servers, converted to tokens, processed through the model, and a response is generated token by token. The model doesn't remember between sessions unless you're in the same conversation. Context builds up during a conversation but has limits.
+- [McKinsey: What is a Context Window?](https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-a-context-window)
+
+**3. How was Claude trained to be helpful and safe?**
+Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision.
+- [Claude's Constitution - Anthropic](https://www.anthropic.com/news/claudes-constitution)
+- [Constitutional AI Research Paper](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
+
+**4. Security deep-dive: What are the real risks?**
+Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. Good topic if you have security-minded folks in the room.
+- [Anthropic's AI Safety Research](https://www.anthropic.com/research)
+- [Core Views on AI Safety - Anthropic](https://www.anthropic.com/news/core-views-on-ai-safety)
+
+**5. AI bias and fairness**
+Models are trained on human-generated data, which includes human biases. This isn't hypothetical - there are documented cases of AI systems showing racial and gender bias in hiring, lending, and other domains.
+- [UW Research: AI Resume Screening Bias](https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/)
+- [Nature: Ethics and Discrimination in AI Recruitment](https://www.nature.com/articles/s41599-023-02079-x)
+
+**6. The economics and environmental impact**
+Running these models takes significant computing power. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?
+
+**7. Where is this all going?**
+Agents, autonomous systems, AGI timelines, job market impacts. People have strong feelings and questions here. You don't need to have answers - facilitating the discussion is valuable.
+- [Anthropic's Recommended AI Safety Research Directions](https://alignment.anthropic.com/2025/recommended-directions/)
+
+**Pro tip:** You don't need to be an expert on all of these. "I don't know, but here's a resource" is a perfectly good answer. The goal is to open doors, not have all the answers.
+
 ---
 
 ## Workshop Flow (90-120 minutes)
@@ -530,6 +567,30 @@ These tools are powerful. Some things to think about:
 - Claude can see what you paste into it
 - Don't paste sensitive data (passwords, API keys, private info) into prompts
 - Your conversation may be used to improve the model (check Anthropic's data policy)
+
+### On Bias in AI Systems
+
+This is important and often overlooked: **AI models are trained on human-generated data, and humans come with biases.**
+
+Think about it like this: we all go through HR training about treating people fairly, but people still don't always follow it. The biases exist even when we know better. The same thing happens with AI - the training data reflects the real world, including its unfairness.
+
+**This isn't hypothetical.** There are documented cases:
+- Amazon had to scrap an AI hiring tool because it discriminated against women - it was trained on resumes from a male-dominated industry and learned to prefer "male" language patterns
+- [Research from University of Washington](https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/) found that LLMs ranking resumes favored white-associated names 85% of the time and never favored Black male-associated names over white male-associated names
+- Google's CV screening tool was found to downgrade resumes containing terms associated with women
+
+**What does this mean for you?**
+- It's not the end of the world, but don't bury your head in the sand either
+- Be aware that AI outputs may reflect societal biases
+- If you're building something that affects people (hiring, lending, recommendations), take extra care
+- Question outputs that seem to reflect stereotypes
+- Anthropic and others are actively researching ways to reduce bias, but it's an ongoing challenge
+
+**If you want to learn more:**
+- [Anthropic's work on pretraining data filtering](https://alignment.anthropic.com/2025/pretraining-data-filtering/) - how they try to filter harmful content from training data
+- [Nature: Ethics and Discrimination in AI Recruitment](https://www.nature.com/articles/s41599-023-02079-x) - academic deep-dive on the hiring algorithm problem
+
+The goal isn't to make you paranoid - it's to make you thoughtful. If you want to build a better world tomorrow, being aware of these issues is part of that.
 
 ### Where This Is All Going
 
