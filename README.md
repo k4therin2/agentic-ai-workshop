@@ -152,9 +152,22 @@ LLMs are transformer-based neural networks trained to predict the next word in a
 - [Large Language Models - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model) (good technical overview)
 - [What is a Context Window? - IBM](https://www.ibm.com/think/topics/context-window) (explains the "memory" limitation)
 
-**2. What's actually happening when I talk to Claude?**
-Your text gets sent to Anthropic's servers, converted to tokens, processed through the model, and a response is generated token by token. The model doesn't remember between sessions unless you're in the same conversation. Context builds up during a conversation but has limits.
-- [McKinsey: What is a Context Window?](https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-a-context-window)
+**2. What's actually happening when I use Claude Code?**
+This is important: **Claude is not running on your computer.** When you type something in Claude Code, here's what happens:
+
+1. Your message gets sent over the internet to Anthropic's servers
+2. Claude (running on their computers) reads your message and figures out what you want
+3. Claude decides what to do - maybe read a file, run a command, write some code
+4. Claude sends back instructions: "I want to run this command on your computer"
+5. Claude Code (the app on YOUR computer) asks your permission, then runs it locally
+6. The output gets sent back up to Anthropic's servers so Claude can see what happened
+7. Claude decides: "Am I done? Do I need to do more? Should I ask the human something?"
+8. This loops until Claude decides the task is complete, then it gives you a summary
+
+So it's a back-and-forth: your computer ↔ Anthropic's servers ↔ your computer. Claude thinks in the cloud, but actions happen on your machine.
+
+- [Claude Code: Behind the Scenes of the Agentic Loop](https://blog.promptlayer.com/claude-code-behind-the-scenes-of-the-master-agent-loop/) (great technical deep-dive)
+- [Anthropic: Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) (official docs on the "gather context → act → verify → repeat" loop)
 
 **3. How companies try to make models to be helpful and safe(r) with varying success**
 Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision. This problem has not been solved and there are ways to have this unintentionally broken.
