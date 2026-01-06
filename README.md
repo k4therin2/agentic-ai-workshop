@@ -177,22 +177,48 @@ In Claude Code, type:
 /agents
 ```
 
-This opens the agent setup wizard. You'll create three agents:
+This opens the agent setup wizard - an interactive menu that walks you through creating an agent.
+
+**Why are we doing this manually instead of having Claude auto-generate agents?** Claude CAN generate agents for you, and that's useful later. But for learning, walking through the wizard yourself helps you understand what agents actually are - just text files with a name, description, and instructions. Doing it manually demystifies the magic.
+
+**Walking through the wizard:**
+
+The wizard will ask you for several things. Here's what to enter for each agent:
 
 **1. Create the Planner agent:**
-- Name it `planner`
-- When asked for the prompt, copy and paste the entire contents of `prompts/planner.md` (everything inside the ``` code block)
-- This agent turns messy ideas into clear plans
+
+| Field | What to enter |
+|-------|---------------|
+| **Type** | Choose "project" (stores it in this project folder) |
+| **Name** | `planner` |
+| **Description** | "Turns messy brain dumps into clear project plans with MVP scope and tasks" |
+| **System Prompt** | Copy and paste everything inside the ``` code block from `prompts/planner.md` |
+| **Tools** | Leave blank (inherits all tools - that's fine for now) |
+| **Model** | Leave as default or choose "inherit" |
 
 **2. Create the Builder agent:**
-- Name it `builder`
-- Paste the contents of `prompts/builder.md`
-- This agent implements your plan as a web app
+
+| Field | What to enter |
+|-------|---------------|
+| **Type** | "project" |
+| **Name** | `builder` |
+| **Description** | "Implements Phase 1 of a plan as a web app running on localhost" |
+| **System Prompt** | Paste from `prompts/builder.md` |
+| **Tools** | Leave blank |
+| **Model** | Leave as default |
 
 **3. Create the Verifier agent (optional):**
-- Name it `verifier`
-- Paste the contents of `prompts/verifier.md`
-- This agent adds simple tests or verification
+
+| Field | What to enter |
+|-------|---------------|
+| **Type** | "project" |
+| **Name** | `verifier` |
+| **Description** | "Adds lightweight tests or verification checklists" |
+| **System Prompt** | Paste from `prompts/verifier.md` |
+| **Tools** | Leave blank |
+| **Model** | Leave as default |
+
+**What just happened?** The wizard created markdown files in `.claude/agents/` in your project folder. That's it - agents are just text files! You can open them in any text editor and see exactly what they contain. No magic, just configuration.
 
 **Why do this?** Once these agents are set up, you can use them anytime by just saying "use the planner agent to..." You'll see the agent name appear as Claude works, which helps you understand what's happening. Plus, you won't have to dig up and copy-paste prompts every time.
 
@@ -392,7 +418,9 @@ Claude Code has a flag called `--dangerously-skip-permissions` that lets Claude 
 
 **The honest truth:** This makes things go WAY faster. Like, 10x faster. Lightning speed. No constant approvals, just Claude doing its thing.
 
-**But:** It comes with real risk. Claude might:
+**Personal note:** I use YOLO mode regularly. When I'm in the zone and want to move fast, it's a game-changer. But I'm accepting real risk when I do that, and I've set up my environment to minimize the damage if something goes wrong. That took time and technical understanding to get right.
+
+**The risks are real.** Claude might:
 - Install things you didn't want
 - Delete files it shouldn't
 - Make changes you can't easily undo
@@ -401,6 +429,14 @@ Claude Code has a flag called `--dangerously-skip-permissions` that lets Claude 
 **My recommendation:** Get yourself a "toy laptop" - an old computer or a cheap refurbished one - specifically for experimenting with autonomous agents. Run YOLO mode there, not on your main machine with all your important stuff. That way you get the speed benefits without the stress.
 
 **For this workshop:** Keep permissions ON. Learn the workflow first, speed it up later.
+
+**Long-term:** I do encourage you to eventually get comfortable enough to make the jump to YOLO mode when appropriate. It unlocks a different level of productivity. But it's an advanced move that requires:
+- Technical understanding of what commands do
+- A proper risk assessment of your environment
+- Backups and a machine you're okay experimenting on
+- Experience with Claude so you can anticipate what it might do
+
+This is a "graduate to it when you're ready" thing, not a "never do this" thing. The speed gains are real and worth pursuing - just do it thoughtfully.
 
 ### What COULD Go Wrong (Plain English)
 
