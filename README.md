@@ -116,9 +116,9 @@ Or pick from our suggestions below. Something small you wish existed!
    - "I've tried the AI thing in Google search results"
    - "I built a whole app with Cursor last week"
    - "I have no idea what any of this is"
-3. What idea they want to work on today (or "I don't know yet")
+3. What project idea they want to work on today (or "I don't know yet")
 
-This does two things: helps you gauge the room, and gets people excited hearing each other's ideas.
+Start with yourself and a simple project idea you'll use as the demo example (e.g. a todo list app). This does two things: helps you gauge the room, and gets people excited hearing each other's ideas.
 
 ### During the Workshop
 
