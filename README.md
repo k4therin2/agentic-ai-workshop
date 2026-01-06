@@ -326,7 +326,7 @@ Claude Code runs commands on YOUR computer. That's powerful, but it means:
 
 ### Real Example: How I Bricked My Server
 
-True story: I was running agents autonomously on my home server. They kept creating Docker images without cleaning up old ones. Eventually I ran out of disk space and the whole server locked up. I had to physically reset it.
+True story: I was running agents autonomously on my home server. They kept creating Docker images without cleaning up old ones. Eventually I ran out of disk space and the whole server locked up. I had to physically reset it. It was fine because it was an expiremental server I had create for the express purpose of toying around, and I was doing some pretty complicated stuff compared to what we're doing today, but move forward with caution.
 
 **Lesson:** Agents are powerful but they don't think about resource limits. Keep an eye on things.
 
