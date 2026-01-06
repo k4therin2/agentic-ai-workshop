@@ -226,13 +226,13 @@ Just get your messy idea out. Don't worry about structure or being "correct."
 
 > **Tip:** Consider using [Wispr](https://wispr.chat/) (free) or [Wispr Flow](https://wispr.chat/flow) (paid) for voice-to-text. Why? Because AI models handle messy human speech surprisingly well, and talking is 3-4x faster than typing. You can literally ramble your idea out loud and paste the transcript. But typing works fine too!
 
-Example brain dumps:
+Example brain dumps (Claude can handle all of these - messy is fine!):
 
-> "I want an app where I can dump all my random ideas and it organizes them somehow, like clusters them by theme or something"
+> "gift planning app"
 
-> "A practice log for music - track what I practiced, how long, my mood, and show me streaks"
+> "ok so like I want something where I can track my music practice? like what I practiced and for how long and maybe my mood or whatever and then it shows me streaks so I stay motivated"
 
-> "Something to help me plan gifts for people with constraints like budget and what they already have"
+> "I have this problem where I keep having ideas for things I want to build or projects or whatever and they're scattered everywhere - some in notes app, some in voice memos, some I just forget entirely. I want like a place to dump all of them and have it somehow organize them for me, maybe cluster by theme or tag them or something? and then help me figure out which ones to actually pursue. basically an idea compost bin that turns chaos into plans. idk if thats too much but yeah"
 
 ### Step 5: Create the Plan (15-20 min)
 
