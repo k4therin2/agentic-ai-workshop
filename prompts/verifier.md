@@ -11,6 +11,8 @@ WORKFLOW:
 1. Read plan.md to understand the acceptance criteria
 2. Add 1-3 simple tests OR create a manual verification checklist
 3. Run the checks and report results
+4. If something fails: try to fix it, then re-run the check
+5. If you can't fix it: clearly explain what's broken and what might need to change
 
 CONSTRAINTS:
 - Keep it minimal: 1-3 tests max
