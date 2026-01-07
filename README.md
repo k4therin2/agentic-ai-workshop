@@ -6,7 +6,7 @@ A beginner-friendly workshop for going from messy idea to working app using Clau
 
 **Audience:** Anyone! Works for complete beginners, designers, PMs, musicians, artists - not just engineers. If you've used ChatGPT before, you can do this.
 
-**For technical folks:** <mark> This guide includes explanations for beginners. Don't write it off - the workflow and agent patterns are useful regardless of your experience level. Skip the basics you already know. </mark> 
+**For technical folks:** This guide includes explanations for beginners. Don't write it off - the workflow and agent patterns are useful regardless of your experience level. Skip the basics you already know. 
 
 ---
 
@@ -381,34 +381,6 @@ Find all prompts in the `/prompts` folder.
 
 ---
 
-## Setting Up the Agents
-
-**Use the `/agents` command in Claude Code to create persistent agents.** This is the recommended approach because:
-
-1. You can reuse agents without copy-pasting every time
-2. You'll see the agent name displayed as Claude works (helps you track what's happening)
-3. It's a key skill for building more sophisticated workflows later
-
-**How to do it:**
-1. In Claude Code, type `/agents`
-2. Follow the wizard to create a new agent
-3. Give it a name (like `planner`)
-4. Paste the prompt from the corresponding file in `/prompts`
-5. Save it
-
-**Once set up, using agents is simple:**
-```
-Use the planner agent to turn this idea into a plan: [your idea]
-```
-
-```
-Use the builder agent to implement Phase 1 from plan.md.
-```
-
-> **Shortcut:** If you're just experimenting or don't want to set up persistent agents, you CAN copy-paste the prompt directly. But you'll miss out on the reusability that makes this workflow powerful in daily use.
-
----
-
 ## Project Ideas (If You Need Inspiration)
 
 ### For Musicians
@@ -614,9 +586,8 @@ This is important and often overlooked: **AI models are trained on human-generat
 Think about it like this: we all go through HR training about treating people fairly, but people still don't always follow it. The biases exist even when we know better. The same thing happens with AI - the training data reflects the real world, including its unfairness.
 
 **This isn't hypothetical.** There are documented cases:
-- Amazon had to scrap an AI hiring tool because it discriminated against women - it was trained on resumes from a male-dominated industry and learned to prefer "male" language patterns
-- [Research from University of Washington](https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/) found that LLMs ranking resumes favored white-associated names 85% of the time and never favored Black male-associated names over white male-associated names
-- Google's CV screening tool was found to downgrade resumes containing terms associated with women
+- [Amazon scrapped an AI hiring tool in 2018](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G) because it discriminated against women - it was trained on resumes from a male-dominated industry and learned to downgrade resumes containing words like "women's" (as in "women's chess club captain")
+- [Research from University of Washington (2024)](https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/) found that LLMs ranking resumes favored white-associated names 85% of the time and never favored Black male-associated names over white male-associated names
 
 **What does this mean for you?**
 - It's not the end of the world, but don't bury your head in the sand either
