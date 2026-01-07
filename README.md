@@ -220,9 +220,31 @@ You should see Claude Code start up and greet you.
 
 **Check your usage limits:** Open [console.anthropic.com/settings/usage](https://console.anthropic.com/settings/usage) in your browser. This shows how much you've used and what's left. Keep this tab open during the workshop.
 
-### Step 2: Set Up Your Agents (15 min)
+### Step 2: Understand What the Agents Do (10-15 min)
 
-This is a crucial step! We're going to create **persistent agents** that you can reuse anytime. This is what makes the workflow fast and repeatable.
+Before setting anything up, let's understand what each agent actually is. Open the `/prompts` folder and read through each one together:
+
+**Planner Agent** (`prompts/planner.md`)
+- Takes your messy idea and asks clarifying questions
+- Proposes a tiny MVP (minimum viable product)
+- Creates a `plan.md` file with scope, acceptance criteria, and tasks
+- Key line: "The goal is to get something running fast, not to build something perfect"
+
+**Builder Agent** (`prompts/builder.md`)
+- Reads the plan and implements Phase 1 only
+- Gets it running as a web app you can open in your browser
+- Explains every command before asking permission
+- Key line: "Ship it!"
+
+**Verifier Agent** (`prompts/verifier.md`) - Optional
+- Adds simple tests or a manual checklist
+- Keeps it light - just enough confidence that it works
+
+The whole point of reading through these is to demystify what's happening. Agents aren't magic - they're just detailed instructions that shape how Claude approaches your project. Take your time here - understanding what's in these prompts makes everything else click.
+
+### Step 3: Set Up Your Agents (15-20 min)
+
+Now we're going to create **persistent agents** that you can reuse anytime. This is what makes the workflow fast and repeatable.
 
 In Claude Code, type:
 ```
@@ -276,28 +298,6 @@ The wizard will ask you for several things. Here's what to enter for each agent:
 
 > **Note:** If you're in a hurry, you CAN just copy-paste the prompts directly without creating persistent agents. But setting them up properly is a skill worth learning - it's what makes this workflow actually fast in real use.
 
-### Step 3: Understand What the Agents Do (5 min)
-
-Before using them, let's understand what each agent does. Open the `/prompts` folder and skim through each one together:
-
-**Planner Agent** (`prompts/planner.md`)
-- Takes your messy idea and asks clarifying questions
-- Proposes a tiny MVP (minimum viable product)
-- Creates a `plan.md` file with scope, acceptance criteria, and tasks
-- Key line: "The goal is to get something running fast, not to build something perfect"
-
-**Builder Agent** (`prompts/builder.md`)
-- Reads the plan and implements Phase 1 only
-- Gets it running as a web app you can open in your browser
-- Explains every command before asking permission
-- Key line: "Ship it!"
-
-**Verifier Agent** (`prompts/verifier.md`) - Optional
-- Adds simple tests or a manual checklist
-- Keeps it light - just enough confidence that it works
-
-The whole point of reading through these is to demystify what's happening. Agents aren't magic - they're just detailed instructions that shape how Claude approaches your project.
-
 ### Step 4: Brain Dump Your Idea (5 min)
 
 Just get your messy idea out. Don't worry about structure or being "correct."
@@ -312,7 +312,7 @@ Example brain dumps (Claude can handle all of these - messy is fine!):
 
 > "I have this problem where I keep having ideas for things I want to build or projects or whatever and they're scattered everywhere - some in notes app, some in voice memos, some I just forget entirely. I want like a place to dump all of them and have it somehow organize them for me, maybe cluster by theme or tag them or something? and then help me figure out which ones to actually pursue. basically an idea compost bin that turns chaos into plans. idk if thats too much but yeah"
 
-### Step 5: Create the Plan (15-20 min)
+### Step 5: Create the Plan (10-15 min)
 
 Now use your planner agent:
 
@@ -329,7 +329,7 @@ The agent will:
 
 **Review the plan.** Give feedback. Ask it to revise until you're happy. This is a conversation!
 
-### Step 6: Build It (30-45 min)
+### Step 6: Build It (10-15 min)
 
 Now use your builder agent:
 
@@ -342,9 +342,11 @@ The agent will:
 - Run it locally as a web app
 - Give you a URL like `http://localhost:3000` to open in your browser
 
+**This is a good time to catch up.** While Claude is building, you can answer questions, help people who are behind, or discuss what's happening. The agent does the heavy lifting - you just approve permissions as they come up.
+
 **When Claude asks permission:** Remember, you can always say "Explain what this command does first." Don't just approve things you don't understand - use it as a learning moment.
 
-### Step 7: Verify It Works (Optional, 10 min)
+### Step 7: Verify It Works (Optional, 5 min)
 
 If you have time, use the verifier agent:
 
@@ -352,7 +354,7 @@ If you have time, use the verifier agent:
 Use the verifier agent to check that the main features work.
 ```
 
-### Step 8: Demo Time!
+### Step 8: Demo Time! (10-15 min)
 
 Share your screen and show what you built! Even "it loads and shows one thing" is a win. The group energy at this point is usually amazing.
 
