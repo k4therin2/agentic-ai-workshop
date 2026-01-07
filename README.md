@@ -456,7 +456,7 @@ When Claude asks to run a command:
 2. **Ask for explanation** - "What does this command do?" is always valid
 3. **Then decide** - You're the human in the loop
 
-Example interaction:
+Example interaction (technical person):
 ```
 Claude: I'd like to run: rm -rf node_modules
 You: What does that command do?
@@ -465,6 +465,28 @@ Claude: This deletes the node_modules folder, which contains
         them fresh and fix a version problem.
 You: Ok, approved.
 ```
+
+Example interaction (non-technical person):
+```
+Claude: I'd like to run: rm -rf node_modules
+You: I have no idea what that means. Can you explain it
+     like I've never used a terminal before?
+Claude: Sure! This command deletes a folder called "node_modules".
+        That folder contains a bunch of helper code that other
+        programmers wrote - think of it like ingredients for a recipe
+        that we downloaded from the internet. Sometimes these
+        ingredients get stale or conflict with each other, so we
+        delete them and download fresh ones. It's like clearing out
+        your pantry and restocking.
+You: What's the risk? Could this break something?
+Claude: Good question! The risk is low here. We're only deleting
+        downloaded code, not YOUR code or files. The worst case is
+        we'd need to re-download those ingredients, which takes a
+        minute or two. Your actual project files are safe.
+You: Ok that makes sense, approved.
+```
+
+The point is: **you can always ask Claude to explain more simply, and to tell you the risks.** It will meet you where you are.
 
 ### About "YOLO Mode" (--dangerously-skip-permissions)
 
