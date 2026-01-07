@@ -143,58 +143,6 @@ Start with yourself and a simple project idea you'll use as the demo example (e.
 - The "it's running!" moment is everything. Optimize for getting there fast.
 - End clearly so people don't feel awkward about leaving
 
-### Bonus Topics for Q&A or Extended Sessions
-
-Think about what YOUR friends might be curious about. Here are some topics that often come up, with starter resources if you want to go deeper:
-
-**1. How do these models actually work?**
-LLMs are transformer-based neural networks trained to predict the next word in a sequence. They don't "think" like humans - they're very sophisticated pattern matchers. Understanding this helps set realistic expectations.
-- [Large Language Models - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model) (good technical overview)
-- [What is a Context Window? - IBM](https://www.ibm.com/think/topics/context-window) (explains the "memory" limitation)
-
-**2. What's actually happening when I use Claude Code?**
-This is important: **Claude is not running on your computer.** When you type something in Claude Code, here's what happens:
-
-1. Your message gets sent over the internet to Anthropic's servers
-2. Claude (running on their computers) reads your message and figures out what you want
-3. Claude decides what to do - maybe read a file, run a command, write some code
-4. Claude sends back instructions: "I want to run this command on your computer"
-5. Claude Code (the app on YOUR computer) asks your permission, then runs it locally
-6. The output gets sent back up to Anthropic's servers so Claude can see what happened
-7. Claude decides: "Am I done? Do I need to do more? Should I ask the human something?"
-8. This loops until Claude decides the task is complete, then it gives you a summary
-
-So it's a back-and-forth: your computer ↔ Anthropic's servers ↔ your computer. Claude thinks in the cloud, but actions happen on your machine.
-
-- [Claude Code: Behind the Scenes of the Agentic Loop](https://blog.promptlayer.com/claude-code-behind-the-scenes-of-the-master-agent-loop/) (great technical deep-dive)
-- [Anthropic: Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) (official docs on the "gather context → act → verify → repeat" loop)
-
-**3. How companies attempt to make models helpful and safe(r) with varying success**
-Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision. This problem has not been solved and there are ways to have this unintentionally broken.
-- [Claude's Constitution - Anthropic](https://www.anthropic.com/news/claudes-constitution)
-- [Constitutional AI Research Paper](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
-
-**4. Security deep-dive: What are the real risks?**
-Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. See above note on "unintentionally breaking" things. Good topic if you have security-minded folks in the room.
-- [Anthropic's AI Safety Research](https://www.anthropic.com/research)
-- [Core Views on AI Safety - Anthropic](https://www.anthropic.com/news/core-views-on-ai-safety)
-
-**5. AI bias and fairness**
-Models are trained on human-generated data, which includes human biases. This isn't hypothetical - there are documented cases of AI systems showing racial and gender bias in hiring, lending, and other domains.
-- [UW Research: AI Resume Screening Bias](https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/)
-- [Nature: Ethics and Discrimination in AI Recruitment](https://www.nature.com/articles/s41599-023-02079-x)
-
-**6. The economics and environmental impact**
-Running these models means running (often GPU-heavy) workloads in data centers, which translates into electricity use, cooling (sometimes water), and real costs/constraints on power + infrastructure. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?
-- [IEA: electricity demand, data center growth, grid constraints, and scenario-based projections](https://www.iea.org/reports/energy-and-ai)
-- [OECD: framework for thinking clearly - direct/indirect paths, measurable vs. uncertain, where data gaps still are](https://www.oecd.org/en/publications/measuring-the-environmental-impacts-of-artificial-intelligence-compute-and-applications_7babf571-en.html)
-
-**7. Where is this all going?**
-Agents, autonomous systems, AGI timelines, job market impacts. People have strong feelings and questions here. You don't need to have answers - facilitating the discussion is valuable.
-- [Anthropic's Recommended AI Safety Research Directions](https://alignment.anthropic.com/2025/recommended-directions/)
-
-**Pro tip:** You don't need to be an expert on all of these. "I don't know, but here's a resource" is a perfectly good answer. The goal is to open doors, not have all the answers.
-
 ---
 
 ## Workshop Flow (90-120 minutes)
@@ -623,6 +571,59 @@ This isn't just for "SF techies." If you're reading this and you built something
 - [The Multiverse School](https://themultiverse.school/) - Highly recommended for going deeper on everything here
 - [Wispr](https://wispr.chat/) - Voice to text for faster brain dumps
 - [VDD: Verification-Driven Development](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) - Advanced adversarial verification pattern
+
+---
+### Bonus Topics for Q&A or Extended Sessions
+
+Think about what YOUR friends might be curious about. Here are some topics that often come up, with starter resources if you want to go deeper:
+
+**1. How do these models actually work?**
+LLMs are transformer-based neural networks trained to predict the next word in a sequence. They don't "think" like humans - they're very sophisticated pattern matchers. Understanding this helps set realistic expectations.
+- [Large Language Models - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model) (good technical overview)
+- [What is a Context Window? - IBM](https://www.ibm.com/think/topics/context-window) (explains the "memory" limitation)
+
+**2. What's actually happening when I use Claude Code?**
+This is important: **Claude is not running on your computer.** When you type something in Claude Code, here's what happens:
+
+1. Your message gets sent over the internet to Anthropic's servers
+2. Claude (running on their computers) reads your message and figures out what you want
+3. Claude decides what to do - maybe read a file, run a command, write some code
+4. Claude sends back instructions: "I want to run this command on your computer"
+5. Claude Code (the app on YOUR computer) asks your permission, then runs it locally
+6. The output gets sent back up to Anthropic's servers so Claude can see what happened
+7. Claude decides: "Am I done? Do I need to do more? Should I ask the human something?"
+8. This loops until Claude decides the task is complete, then it gives you a summary
+
+So it's a back-and-forth: your computer ↔ Anthropic's servers ↔ your computer. Claude thinks in the cloud, but actions happen on your machine.
+
+- [Claude Code: Behind the Scenes of the Agentic Loop](https://blog.promptlayer.com/claude-code-behind-the-scenes-of-the-master-agent-loop/) (great technical deep-dive)
+- [Anthropic: Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) (official docs on the "gather context → act → verify → repeat" loop)
+
+**3. How companies attempt to make models helpful and safe(r) with varying success**
+Anthropic uses "Constitutional AI" - the model is given a set of principles (a "constitution") and learns to critique and revise its own outputs. It's trained through a combination of human feedback and AI self-supervision. This problem has not been solved and there are ways to have this unintentionally broken.
+- [Claude's Constitution - Anthropic](https://www.anthropic.com/news/claudes-constitution)
+- [Constitutional AI Research Paper](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
+
+**4. Security deep-dive: What are the real risks?**
+Beyond the basics we covered, there's prompt injection, data exfiltration risks, and the challenge of trusting AI-generated code. See above note on "unintentionally breaking" things. Good topic if you have security-minded folks in the room.
+- [Anthropic's AI Safety Research](https://www.anthropic.com/research)
+- [Core Views on AI Safety - Anthropic](https://www.anthropic.com/news/core-views-on-ai-safety)
+
+**5. AI bias and fairness**
+Models are trained on human-generated data, which includes human biases. This isn't hypothetical - there are documented cases of AI systems showing racial and gender bias in hiring, lending, and other domains.
+- [UW Research: AI Resume Screening Bias](https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/)
+- [Nature: Ethics and Discrimination in AI Recruitment](https://www.nature.com/articles/s41599-023-02079-x)
+
+**6. The economics and environmental impact**
+Running these models means running (often GPU-heavy) workloads in data centers, which translates into electricity use, cooling (sometimes water), and real costs/constraints on power + infrastructure. Who pays for that? What's the environmental cost? What happens when everyone is using 10x more compute?
+- [IEA: electricity demand, data center growth, grid constraints, and scenario-based projections](https://www.iea.org/reports/energy-and-ai)
+- [OECD: framework for thinking clearly - direct/indirect paths, measurable vs. uncertain, where data gaps still are](https://www.oecd.org/en/publications/measuring-the-environmental-impacts-of-artificial-intelligence-compute-and-applications_7babf571-en.html)
+
+**7. Where is this all going?**
+Agents, autonomous systems, AGI timelines, job market impacts. People have strong feelings and questions here. You don't need to have answers - facilitating the discussion is valuable.
+- [Anthropic's Recommended AI Safety Research Directions](https://alignment.anthropic.com/2025/recommended-directions/)
+
+**Pro tip:** You don't need to be an expert on all of these. "I don't know, but here's a resource" is a perfectly good answer. The goal is to open doors, not have all the answers.
 
 ---
 
