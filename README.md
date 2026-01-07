@@ -128,6 +128,7 @@ Start with yourself and a simple project idea you'll use as the demo example (e.
 - **Regroup every 10-15 min** - Quick "where is everyone?" check-ins prevent people from silently struggling
 - **Celebrate loudly** - When someone gets their first "it's running in my browser!" moment, make noise about it
 - **Walk through the prompts** - Don't just tell people to "use the planner agent." Open the prompt file, read through it together, explain what each section does. This demystifies what's happening.
+- **Be prepared for questions** - See "Bonus Topics for Q&A or Extended Sessions" at the bottom of this page. You don't have to have answers to everything, I find sharing a description of what current industry discussions look like on a topic + where to go for more information can be helpful.
 
 ### Closing the Workshop
 
