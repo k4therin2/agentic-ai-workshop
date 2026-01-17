@@ -487,7 +487,7 @@ You built something! Here's where to go from here:
 
 ### Level Up Your Agents
 
-- **Add more specialized agents** - Try the Business Analyst or TDD Developer in `/prompts/advanced`
+- **Add more specialized agents** - The [system-prompts repo](https://github.com/k4therin2/system-prompts) has my latest production-quality agents: full Requirements → Business Analyst → Project Manager → TDD Developer → QA Engineer pipeline, plus Incident Manager and System Analyst for ops work
 - **Create your own agents** - Write custom prompts for your specific workflows
 - **Use Claude to write agents** - Ask: "Help me write an agent prompt for [your use case]"
 
